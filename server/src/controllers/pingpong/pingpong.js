@@ -34,7 +34,7 @@ const addPingPongToDB = async (host, ping) => {
     return p.ping === ping
   });
   if (pingExist.length == 0) {
-    const [newPing, _] = await db.execute(sql);
+    await db.execute(sql);
 
     return true;
   }
