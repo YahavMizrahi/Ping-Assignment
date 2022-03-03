@@ -1,0 +1,77 @@
+
+.ping-input{
+  width: auto;
+  padding: 8px 16px;
+  line-height: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border-radius: 6px;
+  -webkit-appearance: none;
+  color: #7a8192;
+  border: 1px solid #a9b3c4;
+  background: rgb(255, 255, 255);
+  transition: border .3s ease;
+
+}
+
+.ping-input::placeholder{
+  color:#CBD1DC;
+}
+
+.ping-input:focus{
+  outline: none; 
+  border-color: #275EFE;
+}
+
+
+.button-40 {
+  background-color: #111827;
+  border: 1px solid transparent;
+  border-radius: .75rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.3rem;
+  padding: .75rem 1.2rem;
+  text-align: center;
+  text-decoration: none #6B7280 solid;
+  text-decoration-thickness: auto;
+  transition-duration: .2s;
+  transition-property: background-color,border-color,color,fill,stroke;
+  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: auto;
+}
+
+.button-40:hover {
+  background-color: #272e3a;
+}
+
+.button-40:focus {
+  box-shadow: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+
+
+textarea {
+  border: 1px solid #cbd1dc; 
+  width: 70%;
+  min-height: 25vh;
+  overflow: auto;
+  margin-top:20px;
+}
+
+.ping-conatainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

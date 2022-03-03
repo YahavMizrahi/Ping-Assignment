@@ -1,0 +1,12 @@
+.statistics-container{
+  margin-left: 25%;
+  margin-right: 25%;
+    margin-top:20px;
+
+}
+
+table, th, td{
+  border: 1px solid black;
+  text-align: center;
+  width: 100%;
+}
