@@ -6,9 +6,7 @@ import Statistics from "./components/Statistics/Statistics"
 function App() {
   const [newPingFlag, setNewPinGFlag] = useState(false);
 
-  console.log('aap',newPingFlag);
   const updateFlag = () => {
-    console.log('up func');
     setNewPinGFlag(!newPingFlag)
   }
 

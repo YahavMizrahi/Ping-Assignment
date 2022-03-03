@@ -18,9 +18,7 @@ const postPingCommand =  (req, res) => {
     let [, pongHost, ping] = pong.split(" ");
     ping = ping.substring(1, ping.length - 1);
     if (/((\d{1,3}.?){4}|(www.)?\w*\.\w*)/g.test(ping)) {
-      console.log("...");
       flag = await addPingPongToDB(host, ping);
-      console.log(flag);
     }
 
     res.send({ pong, flag });
