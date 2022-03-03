@@ -4,7 +4,6 @@ import PingForm from "./PingForm";
 import "./PingForm.css";
 
 const PingPong = ({ updateFlag }) => {
-  const [ping, setPing] = useState("");
   const [pong, setPong] = useState({ pong: "" });
 
   const postReqPing = (ping) => {
