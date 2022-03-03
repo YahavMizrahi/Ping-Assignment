@@ -5,7 +5,6 @@ const Statistics = ({flag}) => {
   const [pingsCounter, setPingCounter] = useState([]);
   const [, setFlag] = useState(false);
 
-  console.log(flag,'statat');
 
   const getReqPing = () => {
     server.get("/pingPong/pong").then(
