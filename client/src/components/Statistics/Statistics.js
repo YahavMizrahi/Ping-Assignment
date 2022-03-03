@@ -4,6 +4,7 @@ import "./Statistics.css"
 const Statistics = ({ flag }) => {
   const [pingsCounter, setPingCounter] = useState([]);
 
+
   const getReqPing = () => {
     server.get("/pingPong/pong").then(
       (res) => {

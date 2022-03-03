@@ -13,7 +13,10 @@ const PingPong = ({ updateFlag }) => {
       (res) => {
         if (res) {
           setPong(res.data);
-          if (res.data.flag) updateFlag();
+          if (res.data.flag) {
+            updateFlag();
+
+          }
         }
       },
       (error) => {

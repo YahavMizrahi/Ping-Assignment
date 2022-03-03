@@ -29,7 +29,9 @@ const postPingCommand = (req, res) => {
 const addPingPongToDB = async (host, ping) => {
   let sql = `INSERT INTO ping(ping,host) VALUES('${ping}','${host}');`;
   const [allPings, _] = await db.execute("SELECT * FROM ping;");
-  const pingExist = allPings.filter((p) => p.ping == ping);
+  const pingExist = allPings.filter((p) => {
+    return p.ping === ping
+  });
   if (pingExist.length == 0) {
     const [newPing, _] = await db.execute(sql);
 

@@ -4,7 +4,7 @@ const { setup } = require("./src/middlewares/settup");
 const express = require("express");
 
 const app = express();
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 app.use(setup);
 app.use([pingpong, error]);
