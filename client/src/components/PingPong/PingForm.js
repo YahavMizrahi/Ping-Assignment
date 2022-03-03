@@ -13,7 +13,8 @@ const PingForm = ({ onClickSubmit }) => {
         }}
         onChange={(event) => {
           event.preventDefault();
-          setPing(event.target.value);
+          const url = (event.target.value.replace(/\s/g, ""));
+          setPing(url);
         }}
       >
         <input
