@@ -10,19 +10,20 @@ const getTopFivePings = async (req, res, next) => {
   return topFive;
 };
 
-const postPingCommand = (req, res) => {
+const postPingCommand =  (req, res) => {
   const host = req.body["ping"];
   let flag = false;
-  exec(`ping ${host}`, (error, stdout, stderr) => {
+  exec(`ping ${host}`, async  (error, stdout, stderr) => {
     const pong = stdout;
-    let [, host, ping] = pong.split(" ");
+    let [, pongHost, ping] = pong.split(" ");
     ping = ping.substring(1, ping.length - 1);
-    if (ping.match(/((\d{1,3}.?){4}|(www.)?\w*\.\w*)/g)) {
-      addPingPongToDB(host, ping);
-      flag = !flag
+    if (/((\d{1,3}.?){4}|(www.)?\w*\.\w*)/g.test(ping)) {
+      console.log("...");
+      flag = await addPingPongToDB(host, ping);
+      console.log(flag);
     }
-    
-    res.send({ pong,flag });
+
+    res.send({ pong, flag });
   });
 };
 
@@ -35,9 +36,9 @@ const addPingPongToDB = async (host, ping) => {
   if (pingExist.length == 0) {
     const [newPing, _] = await db.execute(sql);
 
-    return newPing;
+    return true;
   }
-  return;
+  return false;
 };
 
 module.exports = { postPingCommand, getTopFivePings };

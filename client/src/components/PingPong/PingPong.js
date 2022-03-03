@@ -14,7 +14,6 @@ const PingPong = ({ updateFlag }) => {
           setPong(res.data);
           if (res.data.flag) {
             updateFlag();
-
           }
         }
       },

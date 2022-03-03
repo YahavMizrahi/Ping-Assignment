@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { server } from "../../utils/server";
 import "./Statistics.css"
-const Statistics = ({ flag }) => {
+const Statistics = ({flag}) => {
   const [pingsCounter, setPingCounter] = useState([]);
+  const [, setFlag] = useState(false);
 
+  console.log(flag,'statat');
 
   const getReqPing = () => {
     server.get("/pingPong/pong").then(
@@ -20,6 +22,7 @@ const Statistics = ({ flag }) => {
 
   useEffect(() => {
     getReqPing();
+    setFlag(flag)
   }, [flag]);
 
   return (
